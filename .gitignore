@@ -1,0 +1,5 @@
+# Ignorar arquivos grandes
+*.csv
+*.parquet
+*.snappy.parquet
+data/
