@@ -1,5 +1,10 @@
-# Ignorar arquivos grandes
-*.csv
-*.parquet
-*.snappy.parquet
-data/
+# Ignorar variáveis sensíveis
+.env
+
+# arquivos temporários do VS Code
+.vscode/
+*.code-workspace
+
+# Ignorar arquivos Python temporários
+__pycache__/
+*.pyc
