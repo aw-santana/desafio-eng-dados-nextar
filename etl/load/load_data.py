@@ -8,15 +8,16 @@ def carregar_bigquery(df, table_id, project_id, dataset_id):
     logging.info(f"--> Carregando dados para a tabela: {project_id}.{dataset_id}.{table_id}")
     inicio = time.time()
 
-    # Conversão datas
+    # Conversão datas e particionamento
     df = df.select([col(c).cast(DateType()) if "dt_" in c else col(c).cast("string")for c in df.columns])
     df = df.withColumn("dt_ingestao", current_timestamp())
-    df = df.repartition(10)
+    df = df.repartition(12)
 
     (
         df.write.format("bigquery")
         .option("table", f"{project_id}:{dataset_id}.{table_id}")
         .option("writeMethod", "direct")
+        .option("maxWriteBatchSize", "500")
         .option("writeDisposition", "WRITE_TRUNCATE")
         .option("createDisposition", "CREATE_IF_NEEDED")
         .mode("overwrite")

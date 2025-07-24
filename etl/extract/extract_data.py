@@ -30,7 +30,7 @@ def baixar_arquivo(url_empresas: str, url_municipios: str):
         fim = time.time()
         logging.info(f"--> Download concluído: {empresa_csv}. Tempo execução {fim - inicio:.2f} segundos")
     else:
-        logging.info(f"--> Arquivo já existe: {empresa_csv}")
+        logging.info(f"--> Arquivo já baixado: {empresa_csv}")
     
     # Baixar arquivo de municípios
     if not os.path.exists(municipio_csv):
@@ -47,7 +47,7 @@ def baixar_arquivo(url_empresas: str, url_municipios: str):
         fim = time.time()
         logging.info(f"--> Download concluído: {municipio_csv}. Tempo de execução: {fim - inicio:.2f} segundos")
     else:
-        logging.info(f"--> Arquivo já existe: {municipio_csv}")
+        logging.info(f"--> Arquivo já baixado: {municipio_csv}")
 
     return empresa_csv, municipio_csv
     

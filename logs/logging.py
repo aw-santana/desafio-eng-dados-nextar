@@ -2,7 +2,7 @@ import logging
 
 def config_log():
     
-    # Configura o formato e nível de logs
+    # Configura o formato e nivel de logs
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(message)s",

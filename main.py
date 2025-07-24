@@ -30,6 +30,8 @@ def main():
         .config("spark.driver.memory", "8g")
         .getOrCreate()
     )
+    
+    # Configuração de cashe e avisos
     spark.conf.set("spark.sql.debug.maxToStringFields", 1000)
     spark.conf.set("spark.sql.parquet.compression.codec", "uncompressed")
 

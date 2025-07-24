@@ -1,10 +1,9 @@
-# Ignorar variáveis sensíveis
-.env
+# Ignorar dados pesados e arquivos desnecessários
+data/**/*.csv
+data/**/*.parquet
+data/**/*.crc
+data/**/_SUCCESS*
 
-# arquivos temporários do VS Code
-.vscode/
-*.code-workspace
-
-# Ignorar arquivos Python temporários
 __pycache__/
 *.pyc
+.env

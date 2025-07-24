@@ -1,6 +1,0 @@
-outs:
-- md5: 3e51de04d06ec00abb6ef336bff25da3.dir
-  size: 356743982
-  nfiles: 4
-  hash: md5
-  path: empresas.parquet
