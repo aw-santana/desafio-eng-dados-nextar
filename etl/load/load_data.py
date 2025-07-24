@@ -8,10 +8,8 @@ def carregar_bigquery(df, table_id, project_id, dataset_id):
     logging.info(f"--> Carregando dados para a tabela: {project_id}.{dataset_id}.{table_id}")
     inicio = time.time()
 
-    df = df.select([
-        col(c).cast(DateType()) if "dt_" in c else col(c).cast("string")
-        for c in df.columns
-    ])
+    # Conversão datas
+    df = df.select([col(c).cast(DateType()) if "dt_" in c else col(c).cast("string")for c in df.columns])
     df = df.withColumn("dt_ingestao", current_timestamp())
     df = df.repartition(10)
 

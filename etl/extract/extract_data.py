@@ -58,10 +58,11 @@ def extrair_dados(spark: SparkSession, url_empresas: str, url_municipios: str):
 
     csv_empresas, csv_municipios = baixar_arquivo(url_empresas, url_municipios)
 
-    # Empresa
+    # Empresas
     empresas = os.path.splitext(os.path.basename(urlparse(url_empresas).path))[0]
     parquet_empresas = os.path.join("data", "parquet", f"{empresas}.parquet")
 
+    # Schemas
     schema_empresas = StructType([StructField(f"_c{i}", StringType(), True) for i in range(30)])
 
     if os.path.exists(parquet_empresas):
@@ -82,6 +83,7 @@ def extrair_dados(spark: SparkSession, url_empresas: str, url_municipios: str):
     municipios = os.path.splitext(os.path.basename(urlparse(url_municipios).path))[0]
     parquet_municipios = os.path.join("data", "parquet", f"{municipios}.parquet")
 
+    # Schemas
     schema_municipios = StructType([
         StructField("_c0", StringType(), True),
         StructField("_c1", StringType(), True)

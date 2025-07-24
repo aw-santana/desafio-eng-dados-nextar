@@ -112,6 +112,6 @@ O dashboard está disponível no link abaixo:
 **Amim Werbert Silva Santana**  
 Engenheiro de Dados  
 [LinkedIn](https://www.linkedin.com/in/amim-santana)  
-[GitHub](https://github.com/amimsantana)
+[GitHub](https://github.com/aw-santana)
 
 ---

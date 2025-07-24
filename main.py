@@ -14,12 +14,14 @@ config_log()
 
 def main():
 
+    # Variáveis de ambiente
     url_empresas = os.getenv("url_empresas")
     url_municipios = os.getenv("url_municipios")
     dataset_id = os.getenv("dataset_id")
     table_id = os.getenv("table_id")
     project_id = os.getenv("project_id")
 
+    # Sessão Spark
     spark = (
         SparkSession.builder
         .appName("ETL_Empresas")
